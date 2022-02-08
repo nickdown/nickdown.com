@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * @property boolean $is_published
+ * @property string $title
  */
 class Post extends Model
 {
@@ -20,5 +22,10 @@ class Post extends Model
     public function isPublished(): bool
     {
         return $this->is_published;
+    }
+
+    public function scopePublished(Builder $query): Builder
+    {
+        return $query->where('is_published', true);
     }
 }

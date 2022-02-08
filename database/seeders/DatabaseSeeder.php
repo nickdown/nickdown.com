@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     {
         $nick = User::factory()->create([
             'name' => 'Nick',
-            'email' => 'nick@nickdown.com'
+            'email' => config('app.admin_email')
         ]);
 
         $posts = Post::factory()->times(10)->published()->make();

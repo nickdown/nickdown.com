@@ -16,6 +16,7 @@ class PostFactory extends Factory
             'body' => $this->faker->paragraph,
             'slug' => Str::slug($title, '-'),
             'user_id' => User::factory(),
+            'is_published' => $this->faker->boolean,
         ];
     }
 

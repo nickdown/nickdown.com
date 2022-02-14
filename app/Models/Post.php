@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property boolean $is_published
  * @property string $title
+ * @property string $slug
  */
 class Post extends Model
 {
@@ -18,6 +19,11 @@ class Post extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function url(): string
+    {
+        return "posts/" . $this->slug;
     }
 
     public function isPublished(): bool

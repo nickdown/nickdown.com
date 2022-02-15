@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-full bg-gray-100" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +16,18 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="font-sans antialiased flex flex-col h-screen bg-blue-200">
-@include('layouts.header')
-<div class="flex-grow font-sans text-gray-900 antialiased bg-gray-10 bg-gray-100">
-    {{ $slot }}
-</div>
+<body class="font-sans antialiased flex flex-col min-h-full">
+@include('layouts.header.header')
+<header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-lg leading-6 font-semibold text-gray-900">Dashboard</h1>
+    </div>
+</header>
+<main class="flex-grow">
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        {{ $slot }}
+    </div>
+</main>
 @include('layouts.footer')
 </body>
 </html>

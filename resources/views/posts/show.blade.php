@@ -1,5 +1,6 @@
 <x-main-layout>
-    <h1>{{ $post->title }}</h1>
-
+    <x-slot name="title">
+        {{ $post->title }}
+    </x-slot>
     {!! $post->body !!}
 </x-main-layout>

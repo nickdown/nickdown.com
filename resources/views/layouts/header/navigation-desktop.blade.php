@@ -12,7 +12,8 @@
            :class="{{ request()->is('projects') }} ? 'bg-indigo-700' : 'hover:bg-indigo-500 hover:bg-opacity-75'"
            class="text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
 
-        <a href="#" :class="{{ request()->is('about') }} ? 'bg-indigo-700' : 'hover:bg-indigo-500 hover:bg-opacity-75'"
+        <a href="{{ route('about.index') }}"
+           :class="{{ request()->is('about') }} ? 'bg-indigo-700' : 'hover:bg-indigo-500 hover:bg-opacity-75'"
            class="text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
     </div>
 </div>

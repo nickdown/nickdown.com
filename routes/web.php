@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/posts/{post}', [PostController::class, "show"])->name('posts.show');
 Route::get('/posts', [PostController::class, "index"])->name('posts.index');

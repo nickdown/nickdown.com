@@ -5,7 +5,7 @@
            class="text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
         <a href="{{ route('posts.index') }}"
-           :class="{{ request()->is('posts*') }} ? 'bg-indigo-700' : 'hover:bg-indigo-500 hover:bg-opacity-75'"
+           :class="{{ request()->is('posts') }} ? 'bg-indigo-700' : 'hover:bg-indigo-500 hover:bg-opacity-75'"
            class="text-white px-3 py-2 rounded-md text-sm font-medium">Posts</a>
 
         <a href="#"

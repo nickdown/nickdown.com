@@ -2,15 +2,10 @@
 
 namespace App\Nova;
 
-use App\Models\Post as PostModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 
 class Post extends Resource
@@ -47,7 +42,7 @@ class Post extends Resource
     public function fields(Request $request)
     {
         return [
-            Boolean::make('Published')->sortable(),
+            Boolean::make('Published', 'is_published')->sortable(),
             Text::make('Title')->sortable(),
             Text::make('Slug')
                 ->hideFromIndex()

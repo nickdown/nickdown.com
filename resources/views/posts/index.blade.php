@@ -20,7 +20,7 @@
                                 {{--                            <p class="text-sm font-medium text-indigo-600">--}}
                                 {{--                                <a href="#" class="hover:underline"> Article </a>--}}
                                 {{--                            </p>--}}
-                                <a href="{{ $post->url() }}" class="block mt-2">
+                                <a href="{{ route('posts.show', $post) }}" class="block mt-2">
                                     <p class="text-xl font-semibold text-gray-900">{{ $post->title }}</p>
                                     <p class="mt-3 text-base text-gray-500 ">
                                         {{ $post->body }}

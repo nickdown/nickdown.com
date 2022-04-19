@@ -6,7 +6,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <a href="{{ route('welcome') }}" class="flex-shrink-0 text-gray-200 text-xl font-bold">
+                    <a href="{{ route('welcome') }}" class="flex-shrink-0 text-gray-100 text-xl font-bold">
                         Nick Down
                     </a>
                     @include('layouts.header.navigation-desktop')

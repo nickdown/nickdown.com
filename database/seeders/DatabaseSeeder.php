@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
 
         $unpublishedPosts = Post::factory()->times(5)->unpublished()->make();
         $nick->posts()->saveMany($unpublishedPosts);
+
+        $this->call(BookSeeder::class);
     }
 }

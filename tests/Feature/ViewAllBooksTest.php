@@ -17,15 +17,21 @@ class ViewAllBooksTest extends TestCase
      */
     public function test_all_books_can_be_viewed()
     {
-        $books = Book::factory()->create();
+        $books = Book::factory()->times(3)->create();
 
         $response = $this->get(route('books.index'));
 
         $titles = $books->pluck('title')->toArray();
         $authors = $books->pluck('author')->toArray();
+        $linksToIndividualBooks = $books
+            ->map(function (Book $book) {
+                return route('books.show', $book);
+            })
+            ->toArray();
 
         $response->assertStatus(200)
             ->assertSeeTextInOrder($titles)
-            ->assertSeeTextInOrder($authors);
+            ->assertSeeTextInOrder($authors)
+            ->assertSeeInOrder($linksToIndividualBooks);
     }
 }

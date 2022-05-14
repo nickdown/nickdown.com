@@ -22,7 +22,10 @@ class ViewAllBooksTest extends TestCase
         $response = $this->get(route('books.index'));
 
         $titles = $books->pluck('title')->toArray();
+        $authors = $books->pluck('author')->toArray();
+
         $response->assertStatus(200)
-            ->assertSeeTextInOrder($titles);
+            ->assertSeeTextInOrder($titles)
+            ->assertSeeTextInOrder($authors);
     }
 }

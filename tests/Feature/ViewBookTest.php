@@ -16,12 +16,10 @@ class ViewBookTest extends TestCase
 
         $response = $this->get(route('books.show', $book));
 
-        $title = $book->pluck('title')->toArray();
-        $author = $book->pluck('author')->toArray();
-
         $response->assertStatus(200)
-            ->assertSeeText($title)
-            ->assertSeeText($author);
+            ->assertSeeText($book->title)
+            ->assertSeeText($book->author)
+            ->assertSeeText($book->description);
     }
 
     public function test_unpublished_books_cannot_be_viewed_by_guests()

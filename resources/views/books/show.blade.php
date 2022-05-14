@@ -1,6 +1,6 @@
 <x-main-layout>
     <x-slot name="title">
-        {{ $post->title }}
+        Book Review: {{ $book->title }} by {{ $book->author }}
     </x-slot>
-    {!! $post->body !!}
+    Description coming soon
 </x-main-layout>

@@ -9,6 +9,10 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $dates = [
+        'published_at',
+    ];
+
     public function scopePublished($query)
     {
         return $query->whereNotNull('published_at');

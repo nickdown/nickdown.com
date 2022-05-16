@@ -11,5 +11,11 @@
                     ? 'bg-indigo-700 text-white px-3 py-2 rounded-md text-sm font-medium'
                     : 'hover:bg-indigo-500 hover:bg-opacity-75 text-white px-3 py-2 rounded-md text-sm font-medium' }}"
         >About</a>
+
+        <a href="{{ route('books.index') }}"
+           class=" {{ request()->is('books')
+                    ? 'bg-indigo-700 text-white px-3 py-2 rounded-md text-sm font-medium'
+                    : 'hover:bg-indigo-500 hover:bg-opacity-75 text-white px-3 py-2 rounded-md text-sm font-medium' }}"
+        >Books</a>
     </div>
 </div>

@@ -12,6 +12,10 @@
             <div class="px-5 py-2">
                 <a href="{{ route('posts.index') }}" class="text-base text-gray-500 hover:text-gray-900">Posts</a>
             </div>
+
+            <div class="px-5 py-2">
+                <a href="{{ route('books.index') }}" class="text-base text-gray-500 hover:text-gray-900">Books</a>
+            </div>
         </nav>
         <div class="mt-8 flex justify-center space-x-6">
             <a href="https://twitter.com/WhatsUpNickDown" class="text-gray-400 hover:text-gray-500">

@@ -2,6 +2,9 @@
     <x-slot name="title">
         {{ $book->title }}
     </x-slot>
-    <p>By: {{ $book->author }}</p>
-    <p>{{ $book->description }}</p>
+    <article class="prose">
+        <p>By: {{ $book->author }}</p>
+        {!! Str::markdown($book->description) !!}
+    </article>
 </x-main-layout>
+
